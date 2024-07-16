@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+
+      1.prompt 사용자입력 
+      점수를 입력받아서 학점을 출력해 봅시다
+
+
+      2. 1번 ) 1번 문제를  3번 반복하기 
+         2번 ) 1번 문제를  점수가 음수가 음력되기 전까지 반복하기
+
+      1.
+      점수를입력받는다
+      점수에 대한 학점을 구한다
+      점수 출력
+      2.1
+      반복 (3번)
+      -점수를입력받는다
+      -점수에 대한 학점을 구한다
+      -점수 출력
+      2.2
+      반복 (음수입력되기전까지)
+      -점수를입력받는다
+      -점수에 대한 학점을 구한다
+      -점수 출력
+
+
+      3.  구구단 ( 2단 출력) 
+         - console.log( ) 
+         - document.write()
+      4.  2~5단까지 출력하기 ( 2~5단)   
+
+      5. 별출력  (단 *별 한개를 이용하기)
+         1)*
+
+         2) *****
+
+         3) *****
+            *****
+            *****
+
+         4) *
+            **
+            ***
+
+         5) ***
+            **
+            *
+
+      6. 구구단 while, do~ while  해결하기
+      
+   */
+      //1
+      /*
+   let score = prompt("점수를 입력해주세요");
+   if(score == 4){
+      alert("A");
+   }
+   else if(score == 3){
+      alert("B");
+   }
+   else if(score == 2){
+      alert("C");
+   }
+   else if(score == 1){
+      alert("D");
+   }
+   else{
+      alert("F");
+   }
+   
+   //2-1
+   let score = prompt("점수를 입력해주세요");
+   if(score == 4){
+      alert("A");
+   }
+   else if(score == 3){
+      alert("B");
+   }
+   else if(score == 2){
+      alert("C");
+   }
+   else if(score == 1){
+      alert("D");
+   }
+   else{
+      alert("F");
+   }
+   let score = prompt("점수를 입력해주세요");
+   if(score == 4){
+      alert("A");
+   }
+   else if(score == 3){
+      alert("B");
+   }
+   else if(score == 2){
+      alert("C");
+   }
+   else if(score == 1){
+      alert("D");
+   }
+   else{
+      alert("F");
+   }
+   let score = prompt("점수를 입력해주세요");
+   if(score == 4){
+      alert("A");
+   }
+   else if(score == 3){
+      alert("B");
+   }
+   else if(score == 2){
+      alert("C");
+   }
+   else if(score == 1){
+      alert("D");
+   }
+   else{
+      alert("F");
+   }
+      
+      //2-2
+      while (true) {
+        let score = prompt("점수를 입력해주세요");
+        if (score == 4) {
+          alert("A");
+        } else if (score == 3) {
+          alert("B");
+        } else if (score == 2) {
+          alert("C");
+        } else if (score == 1) {
+          alert("D");
+        } else if (score == 0) {
+          alert("F");
+        } else if (score < 0) {
+          break;
+        }
+      }
+        
+      //3
+      alert("2 X 1 =" + 2*1);
+      alert("2 X 2 =" + 2*2);
+      alert("2 X 3 =" + 2*3);
+      alert("2 X 4 =" + 2*4);
+      alert("2 X 5 =" + 2*5);
+      alert("2 X 6 =" + 2*6);
+      alert("2 X 7 =" + 2*7);
+      alert("2 X 8 =" + 2*8);
+      alert("2 X 9 =" + 2*9);
+      
+     //4
+      alert("2 X 1 =" + 2*1);
+      alert("2 X 2 =" + 2*2);
+      alert("2 X 3 =" + 2*3);
+      alert("2 X 4 =" + 2*4);
+      alert("2 X 5 =" + 2*5);
+      alert("2 X 6 =" + 2*6);
+      alert("2 X 7 =" + 2*7);
+      alert("2 X 8 =" + 2*8);
+      alert("2 X 9 =" + 2*9);
+      alert("3 X 1 =" + 3*1);
+      alert("3 X 2 =" + 3*2);
+      alert("3 X 3 =" + 3*3);
+      alert("3 X 4 =" + 3*4);
+      alert("3 X 5 =" + 3*5);
+      alert("3 X 6 =" + 3*6);
+      alert("3 X 7 =" + 3*7);
+      alert("3 X 8 =" + 3*8);
+      alert("3 X 9 =" + 3*9);
+      alert("4 X 1 =" + 4*1);
+      alert("4 X 2 =" + 4*2);
+      alert("4 X 3 =" + 4*3);
+      alert("4 X 4 =" + 4*4);
+      alert("4 X 5 =" + 4*5);
+      alert("4 X 6 =" + 4*6);
+      alert("4 X 7 =" + 4*7);
+      alert("4 X 8 =" + 4*8);
+      alert("4 X 9 =" + 4*9);
+      alert("5 X 1 =" + 5*1);
+      alert("5 X 2 =" + 5*2);
+      alert("5 X 3 =" + 5*3);
+      alert("5 X 4 =" + 5*4);
+      alert("5 X 5 =" + 5*5);
+      alert("5 X 6 =" + 5*6);
+      alert("5 X 7 =" + 5*7);
+      alert("5 X 8 =" + 5*8);
+      alert("5 X 9 =" + 5*9);
+      */
+     
+    </script>
+  </body>
+</html>
