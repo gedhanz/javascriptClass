@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let kors = [90,80,70,99,65,70];
+
+        //0.모두 점수 출력하기
+        //1.평균구하기
+        //2.평균보다 높은 학생 수 구하기
+        alert(kors);
+
+        let result =0, avg =0;
+        for(let i=0;i<kors.length;i++){
+            result +=kors[i];
+        }
+        avg = result/kors.length;
+        alert(avg);
+
+        let students =0;
+        for(let i=0;i<kors.length;i++){
+            if(avg < kors[i]){
+                students++;
+            }
+        }
+        alert(students);
+    </script>
+</body>
+</html>
