@@ -14,15 +14,18 @@
     </style>
 </head>
 <body>
-    <div>
-        <div id="add">
-        <img src='https://recipe1.ezmember.co.kr/cache/recipe/2020/09/18/8e71778150611f25ffa80cb73e7124301.jpg' style='height: 400px;'/>
-        <h2>라볶이 만들기</h2>
-        </div>
+    <div id="add">
+    <img src='https://recipe1.ezmember.co.kr/cache/recipe/2020/09/18/8e71778150611f25ffa80cb73e7124301.jpg' style='height: 400px;'/>
+    <h2>라볶이 만들기</h2>
+    </div>
+    <div id="recipt"></div>
     <script>
         
         let add = document.querySelector('#add');
-        add.addEventListener("click",라볶이);
+        add.addEventListener("click",getRecipt);
+        function getRecipt(){
+            document.getElementById("recipt").innerHTML = 라볶이();
+        }
         function 라볶이(){
             document.write(
             "<img src='https://recipe1.ezmember.co.kr/cache/recipe/2020/09/18/37a92c34cc59b939da591bd697e008ed1.jpg' style='height: 400px;'/>");
@@ -40,6 +43,5 @@
         }
 
     </script>
-    </div>
 </body>
 </html>
