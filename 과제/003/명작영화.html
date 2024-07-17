@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>오늘의 영화</h2>
+    <button onclick="movieShow()">오늘의 영화는?</button>
+    <div id="showimg"></div>
+    <div id="show"></div>
+    <script>
+        const movies = {
+            movie1 : ["쇼생크 탈출","1994년","스릴러/범죄","2시간 22분","https://an2-img.amz.wtchn.net/image/v2/mWkKlMgZfYjIuTAHUm-TLA.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpRM01UVTNOVFkyT0RjNE16VXdPQ0o5LllSbG1nanA5ekRDRkhBeFppcjFYWGZOSDBudDlSdGFiWFFaNjRHVGtDVVU"],
+            movie2 : ["인셉션","2010년","SF/액션","2시간 27분","https://an2-img.amz.wtchn.net/image/v2/8NxGK1J7OPdLt7XtagGXkw.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXhMMkZ3Wm1oNWRucHRNVE14T0hGMU1HbG9aV3BqSW4wLjZaQmpjb21aVkJGYnNKbm8yd2h4eVhoZXFpSDFsODdtRkNCbGg5MHN2UXc"],
+            movie3 : ["다크 나이트","2008년","액션/범죄","2시간 32분","https://an2-img.amz.wtchn.net/image/v2/Gg9ozwFhm3cD3EicFFdhKw.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXhMMk56TUhBeVpqazJNM2hsT1dkclkyNWplVFowSW4wLkw1Q09PWnhWMTBQVDdqb01BcHZGMHdlYlF4MVpvTDBoelBXUzFYLWpoTlU"],
+            movie4 : ["기생충","2019년","스릴러/코미디","2시간 11분","https://an2-img.amz.wtchn.net/image/v2/4fXGcnpr8CS5f2l3jE2Z-Q.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXhMM2gzY1d0aWEyeHRkbkJsZG5sNllXWjFabUp5SW4wLmMwUjdILXByVzhFVGhESDZQckNpc2M0RkhGOW1mdl9MRnE3RGswU1VRcUU"],
+            movie5 : ["타이타닉","1997년","로맨스/모험","3시간 14분","https://an2-img.amz.wtchn.net/image/v2/aOwd8RyHU8KTZFGv4itBHQ.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFMk56VTRNemt5TnpjMk1qUTNNVEkzTXpBaWZRLlNBSWN3SmMyQkZjOFVXWm5uYTREMnpTMGtGSzdpN25XeGVjYU1PN0VzdUk"],
+            movie6 : ["어바웃 타임","2013년","로맨스/코미디","2시간 3분","https://an2-img.amz.wtchn.net/image/v2/jENE7VlqUpBKBIfpyHRing.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXhMMmt3WjNsdlpEbDFlRzFwZUdrNVltUjZhV2xySW4wLjRjRFByUGhqQUt2c2tsdndzWmRmUmM2bjlYbGc1OWJaaWhXWXJmaEdMeWc"],
+            movie7 : ["인생은 아름다워","1997년","코미디/전쟁","1시간 56분","https://an2-img.amz.wtchn.net/image/v2/biQK-S4mE1O5_3QvabOjAg.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXhMM2wzY1hGMU9YVjZOVFY0T0hsemJqUnFkWEJwSW4wLjdlVmVnRDVDaW91dHVHTkpyTEMycEl1SE5ib1RiQm5ZOVJac0pwOE9oOTA"],
+            movie8 : ["포레스트 검프","1994년","코미디/로맨스","2시간 22분","https://an2-img.amz.wtchn.net/image/v2/Tea09SG3ewDhCNXpXlCCQA.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXhMMm95WldSaVpubGtZbUZ1ZFhScGNUUTRhamh4SW4wLkpqVW5IMEQtMEE3NEpDS2dVc0haQlpkRTVZdU5nanJmTE9SVXYzSlJfRjQ"],
+            movie9 : ["센과 치히로의 행방불명","2001년","판타지/모험","2시간 5분","https://an2-img.amz.wtchn.net/image/v2/3A4qOu7RtiKpI_OHcrM6SQ.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXhMM2t6ZVdwbFkyWjZNM2xsYm5WNGFIWjFPV3gySW4wLnFMR29ZX0ZEYnNIZnllX1c4cWR3bmlqdnFHTldHWmNQQjJoV1RkZmFpb1U"],
+            movie10 : ["레옹","1994년","액션/범죄","1시간 50분","https://an2-img.amz.wtchn.net/image/v2/dxKRDWzUXkmFaAjG9ODR9A.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFd05qQTBNVGt5TURZeE1qSXdOemNpZlEudFRJalVPRUdzd3phenZBZl9ocFBNZ2xTQ1hLYVBKbDdteFNsdXRlcEdzbw"],
+            movie11 : ["인터스텔라","2014년","SF/모험","2시간 49분","https://an2-img.amz.wtchn.net/image/v2/bw4jfVYFEl8JQKAtu6btTA.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXhMM2x5WVRKM1pqRmtOSFJoYkc5NU5YRXpPWFYzSW4wLmF5Wk5HNmhtejZsVF9UVU83ZXpYV015ak95UDZVdkR5ZlRNTzJKX2NVUG8"],
+            movie12 : ["트루먼 쇼","1998년","코미디/SF","1시간 43분","https://an2-img.amz.wtchn.net/image/v2/LvGvv8UD2widh46F0Fyc9w.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXlMM04wYjNKbEwybHRZV2RsTHpFMk5USTBNekF6TXpZMk16Y3pNalk0TXpVaWZRLmNwVVlPTUlzUEJzSmxNRXhUbjJEbTRYZldzYUlDcHkzbDdkMG9LdENUREU"],
+            movie13 : ["매트릭스","1999년","액션/SF","2시간 16분","https://an2-img.amz.wtchn.net/image/v2/wIlz_kCJcivvFJ1Lgdnzeg.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXhMM0p5YjJRNGRYWm1hM0pzY1dkbmVUQTFZbTlpSW4wLldtNnBoN0ZlcmZwMmgtaGllWEdCX0g4bW9hQXo3ZmFxUk1VUlc2TERZbmc"],
+            movie14 : ["어벤져스 : 앤드게임","2019년","액션/SF","3시간 1분","https://an2-img.amz.wtchn.net/image/v2/iCver578msvB6hAoi76zuQ.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXhMMlY1Y0d4MGFucDZNblJyZW1kMk1XYzFiSGxsSW4wLkRTZDFWOWkxUmNUN1h2Rl83dnpuN3Rxa0htejRQQll2a0ZaNHZRZWdSNkE"],
+            movie15: ["하울의 움직이는 성","2004년","어린이/판타지","1시간 59분","https://an2-img.amz.wtchn.net/image/v2/O1X7p9PPJBIDIicJvZmZZw.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk5Ea3dlRGN3TUhFNE1DSmRMQ0p3SWpvaUwzWXhMM2c0ZVc5M2JXcG9iVEJxYm13eWRXdHhZVzV6SW4wLmlNNFd4RzNyT0NVM1V0eUY5aHhFU1BtMG93Y2JyaG5zWXNEbkRrckFlcUU"],
+        };
+        function getRandomIntInclusive(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); // 최댓값도 포함, 최솟값도 포함
+        }
+
+        function movieShow(){
+            randomMovie = "movie" + getRandomIntInclusive(1,15);
+            let movie = '<h3>' + movies[randomMovie][0] + '</h3> <br> <p> 개봉년도: ' + movies[randomMovie][1] + '</p> <br> <p> 장르: ' + movies[randomMovie][2] + '</p> <br> <p> 러닝타임: ' + movies[randomMovie][3] + '</p> <br>';
+            
+            document.getElementById("showimg").innerHTML = "<img src="+ movies[randomMovie][4] +" style='height: 400px;'/>" ;
+            document.getElementById("show").innerHTML = movie;
+            
+        };
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //콜백함수, 시간
+        //1.익명, 2.함수를 작성하고
+        //setTimeout(function(){},1000);
+        function hi(func){
+            alert("5초뒤 실행");
+            setTimeout(func,5000);
+        }
+
+        hi(function(){
+            alert("hi코드 실행됨");
+        });
+        
+        setTimeout(function(){
+            let num = [];
+            for(let i=0;i<5;i++){
+                let random = Math.floor(Math.random() * (21 - 1) + 1);
+                num[i] = random;
+            }
+            alert(num);
+        },1000);
+    </script>
+</body>
+</html>
