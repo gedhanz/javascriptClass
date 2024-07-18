@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+      window.addEventListener("load", function () {
+        const swiper = new Swiper(".swiper", {
+          // Optional parameters
+          direction: "horizontal",
+          loop: true,
+
+          autoplay:{
+            delay:3000,
+          },
+          slidesPerView: 1, // 한번에 보여줄 슬라이드 개수
+          spaceBetween: 10, // 슬라이드 사이 여백
+
+          // If we need pagination
+          pagination: {
+            el: ".swiper .swiper-pagination",
+            clickable:true,
+          },
+
+          // Navigation arrows
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+
+        });
+      });
+    </script>
+
+    <style>
+        .swiper{
+            width: 1600px;
+            height: 800px;
+            margin: 50px auto;
+        }
+        img{
+            width: 1600px;
+            height: 800px;
+        }
+    </style>
+  </head>
+  <body>
+    <!-- Slider main container -->
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide"><img src="art/100655absdl.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="art/101430absdl.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="art/224425fgsdl.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="art/601329slsdl.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="art/206976fgsdl.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="art/800693htsdl.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="art/401154mtsdl.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="art/401954mtsdl.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="art/506805ldsdl.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="art/602564slsdl.jpg" alt=""></div>
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+    </div>
+  </body>
+</html>
