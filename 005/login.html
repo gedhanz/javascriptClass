@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header{
+            border: 1px solid #000;
+            height: 100px;
+            /**/
+            position: relative;
+        }
+        nav{
+            height: 60px;
+        }
+        header .img{
+            width: 200px;
+            height: 60px;
+            background-image: url(images/logo.png);
+            background-position: center;
+            background-size: cover;
+            /**/
+            position: absolute;
+            /* top, left, right, bottom */
+            left: 30px;
+            top: 10px;
+        }
+        /*검색바*/
+        .search{
+            width: 300px;
+            height: 50px;
+            border: 1px solid #000;
+            display: flex;
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+            padding-bottom: 5px;
+        }
+        .search input{
+            width: 230px;
+            margin-left: 20px;
+            border: none;
+            outline: none;
+        }
+        .search_btn{
+            margin-top: 5px;
+            width: 40px;
+            height: 40px;
+            background-color: antiquewhite;
+            background-image: url(https://images.velog.io/images/orol116/post/423104a2-c4ea-47e6-8829-9d37d3df3a09/123.png);
+            background-position: center;
+            background-size: cover;
+        }
+        /*nav*/
+        nav ul{
+            list-style: none;
+            /**/
+            display: flex;
+        }
+        nav ul li{
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        .header{
+            width: 100%;
+            height: 170px;
+            margin-top: 30px;
+        }
+        .logo{
+            width: 170px;
+            margin: 0 auto;
+        }
+        main{
+            padding-top: 50px;
+        }
+        .header img{
+            width: 170px;
+            height: 170px;
+        }
+        section{
+            width: 340px;
+            margin: 0 auto;
+        }
+        input{
+            width: 100%;
+            height: 44px;
+            padding: 0 14px 2px;
+            line-height: 42px;
+            border: 1px solid #d5d5d5;
+            border-radius: 6px;
+            box-sizing: border-box;
+            outline: none;
+        }
+        .id input{
+            border-bottom: none;
+        }
+        .loginBtn{
+            margin-top: 20px;
+        }
+        .loginButton{
+            width: 100%;
+            height: 50px;
+            background-color: #bebebe;
+            border: 1px solid #767676;
+            border-radius: 6px;
+            line-height: 24px;
+            font-weight: 700;
+            color: white;
+        }
+        .loginButton:hover{
+            background-color: violet;
+            cursor: pointer;
+        }
+        footer{
+            height: 100px;
+            /**/
+            display: flex;
+            padding: 10px;
+        }
+        footer > div{
+            width: 33%;
+            height: 100px;
+            line-height: 100px;
+            border: 1px solid #000;
+        }
+    </style>
+
+    <script>
+        function check(){
+            let id = document.getElementById("id");
+            let pw = document.getElementById("pw");
+            if(id.value == ""){
+                alert("아이디를 입력해주세요");
+                id.focus();
+            }else if(pw.value == ""){
+                alert("비밀번호를 입력해주세요");
+                pw.focus();
+            }else{
+                alert("로그인에 성공하였습니다");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <!--로고 이미지-->
+            <div class="img"></div>
+            <!--검색바-->
+            <div class="search">
+                <input type="text">
+                <div class="search_btn"></div>
+            </div>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="login.html">로그인</a></li>
+                <li><a href="joinus.html">회원가입</a></li>
+                <li><a href="index6.html">홈으로</a></li>
+            </ul>
+        </nav>
+        <div class="header">
+            <div class="logo"><a href="index6.html"><img src="images/login_logo.jpg" alt=""></a></div>
+        </div>
+        <main>
+            <section>
+                <div class="idpw_group">
+                    <div class="id_div"><input type="text" id="id" placeholder="아이디를 입력해주세요"></div>
+                    <div class="pw_div"><input type="password" id="pw" placeholder="비밀번호를 입력해주세요"></div>
+                </div>
+                <div class="loginBtn">
+                    <button class="loginButton" onclick="check()"><span>로그인</span></button>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div><img src="images/footer_acorn.png" alt=""></div>
+            <div>(주)에이콘이즈 에이콘아카데미(홍대)</div>
+            <div>COPYRIGHT(C) HBILAB ALL RIGHTS RESERVED.</div>
+        </footer>
+    </div>
+</body>
+</html>

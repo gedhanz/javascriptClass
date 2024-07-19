@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            margin: 0 auto;
+            margin-top: 50px;
+            width: 400px;
+            padding: 50px;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .06);
+        }
+        .header{
+            width: 100%;
+            height: 170px;
+            margin-top: 30px;
+        }
+        .logo{
+            width: 170px;
+            margin: 0 auto;
+        }
+        main{
+            padding-top: 50px;
+        }
+        .header img{
+            width: 170px;
+            height: 170px;
+        }
+        section{
+            width: 340px;
+            margin: 0 auto;
+        }
+        input{
+            width: 100%;
+            height: 44px;
+            padding: 0 14px 2px;
+            line-height: 42px;
+            border: 1px solid #d5d5d5;
+            border-radius: 6px;
+            box-sizing: border-box;
+            outline: none;
+        }
+        .id input{
+            border-bottom: none;
+        }
+        .loginBtn{
+            margin-top: 20px;
+        }
+        .loginButton{
+            width: 100%;
+            height: 50px;
+            background-color: #bebebe;
+            border: 1px solid #767676;
+            border-radius: 6px;
+            line-height: 24px;
+            font-weight: 700;
+            color: white;
+        }
+        .loginButton:hover{
+            background-color: black;
+            cursor: pointer;
+        }
+        #id:focus{
+            border: 1px solid #000;
+        }
+        #pw:focus{
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="header">
+        <div class="logo"><a href="index6.html"><img src="images/login_logo.jpg" alt=""></a></div>
+    </div>
+    <main>
+        <section>
+            <div class="idpw_group">
+                <div class="id_div"><input type="text" id="id" placeholder="아이디를 입력해주세요"></div>
+                <div class="pw_div"><input type="password" id="pw" placeholder="비밀번호를 입력해주세요"></div>
+            </div>
+            <div class="loginBtn">
+                <button class="loginButton" onclick="check()"><span>로그인</span></button>
+            </div>
+        </section>
+    </main>
+</div>
+</body>
+</html>
