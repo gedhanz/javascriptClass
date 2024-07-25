@@ -1,0 +1,41 @@
+.movie_header{
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 100px;
+}
+.movie_rate{
+    width: 300px;
+    display: flex;
+    align-items: flex-end;
+}
+.movie_main{
+    margin: 50px 100px;
+}
+.movie_gallery{
+    display: flex;
+    justify-content: space-around;
+}
+.movie_gallery div{
+    padding: 20px;
+}
+.movie_gallery img{
+    width: 278px;
+    height: 400px;
+}
+.storyline{
+    margin: 50px 100px;
+}
+.storyline p{
+    color: gray;
+    font-size: 14px;
+}
+.people{
+    display: flex;
+    margin: 50px 100px;
+    text-align: center;
+    justify-content:space-around;
+}
+.people img{
+    width: 100px;
+    height: 100px;
+}
