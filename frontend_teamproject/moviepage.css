@@ -18,13 +18,13 @@ header{
 }
 .logo{
     text-decoration: none;
-    background-image: url(https://i.ibb.co/k6zC3JP/Talk-Media-i-adc7cd6bf5e1-png.png);
+    background-image: url(https://i.ibb.co/B2nhGpC/main-logo.png);
     background-size: cover;
     background-position: center;
     cursor: pointer;
     display: flex;
     width: 100px;
-    height: 70px;
+    height: 98%;
 }
 .header_user{
     width: 1500px;
