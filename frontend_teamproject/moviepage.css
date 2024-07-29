@@ -1,10 +1,11 @@
 *{
     font-family: Pretendard, "Apple SD Gothic Neo", "Nanum Gothic", "Malgun Gothic", sans-serif;
+    box-sizing: border-box;
 }
 header{
     border: 0.5px solid #72CC82;
     height: 70px;
-    box-sizing: border-box;
+    background-color: #96e6a5;
 }
 .header_content{
     display: flex;
@@ -17,7 +18,7 @@ header{
 }
 .logo{
     text-decoration: none;
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_lXFawj36xIknKIL0mXsAq7STOMFVIQi8Gg&s);
+    background-image: url(https://i.ibb.co/k6zC3JP/Talk-Media-i-adc7cd6bf5e1-png.png);
     background-size: cover;
     background-position: center;
     cursor: pointer;
@@ -135,7 +136,7 @@ header{
 footer{
     height: 70px;
     border: 1px solid #72CC82;
-    
+    background-color: #96e6a5;
 }
 .footer_content{
     width: 100%;
