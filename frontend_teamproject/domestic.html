@@ -20,6 +20,7 @@
     border: 0.5px solid #96e6a5;
     height: 70px;
     background-color: #96e6a5;
+    flex-shrink: 0;
 }
 .header_content{
     display: flex;
@@ -163,6 +164,8 @@
             /* 포스터의 높이에 맞춰 설정 */
         }
 
+        .movie
+
         .movie-hover {
             position: absolute;
             bottom: 0;
@@ -209,7 +212,8 @@
 
 
         main {
-            height: 800px;
+            height: 700px;
+            padding-top: 30px;
         }
 
         .rating {
@@ -220,7 +224,10 @@
             padding: 10px 0;
             /* 별 위아래 간격 */
         }
-
+        .sug{
+            display: flex;
+            margin-left: 30px;
+        }
         .star {
             cursor: pointer;
             transition: color 0.2s;
@@ -255,6 +262,14 @@
     text-decoration: none;
     color: #000;
 }
+.span{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+#menu_select{
+    margin-left: 10px;
+}
     </style>
 </head>
 
@@ -266,7 +281,7 @@
           </div>
           <div class="header_user">
             <ul>
-              <li><a href="">로그인</a></li>
+              <li><a href="login.html">로그인</a></li>
               <li><a href="joinus.html">회원가입</a></li>
             </ul>
           </div>
@@ -284,24 +299,26 @@
       </header>
     <section>
         <div class="sug">
-            <h1>국내 영화 <span>포스터를 클릭시 상세페이지로 넘어갑니다.</span></h1>
+            <h1>국내 영화 추천 </h1>
+                <div class="gen_sug">
+    
+                    <select id="menu_select">
+                        <option value="select1">미스터리&스릴러 </option>
+                        <option value="select2">로맨스</option>
+                        <option value="select3">정치</option>
+                        <option value="select4">SF&판타지</option>
+                        <option value="select5">액션</option>
+                    </select>
+                </div>
+        
+                <div class="span"><span>포스터를 클릭시 상세페이지로 넘어갑니다.</span></div>
             <div class="poster">
             </div>
         </div>
     </section>
 
     <main>
-        <div class="gen_sug">
-            <h1>장르별 추천</h1>
-            <select id="menu_select">
-                <option value="select1">미스터리&스릴러 </option>
-                <option value="select2">로맨스</option>
-                <option value="select3">정치</option>
-                <option value="select4">SF&판타지</option>
-                <option value="select5">액션</option>
-            </select>
-        </div>
-
+       
 
 
         <div id="select1Content" class="content">
@@ -311,11 +328,8 @@
                         <a href="파묘.html">
                             <div class="movie">
                                 <img
-                                    src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/tw0i3kkmOTjDjGFZTLHKhoeXVvA.jpg">
-                                <div class="movie-details">
-                                    <h2>파묘</h2>
-                                    <p>2024 ・ 한국</p>
-                                </div>
+                                    src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/tw0i3kkmOTjDjGFZTLHKhoeXVvA.jpg"> 
+                              
                                 <div class="movie-hover">
                                     <div class="rating">
                                         <span class="star">&#9733;</span>
@@ -326,8 +340,10 @@
                                     </div>
                                     <p>허리가 끊겨 양분된 후 힘 못 쓰는 이야기, 편의적 보이스오버로 시각적 상상력을 대체한 맥없는 클라이맥스.</p>
                                 </div>
+                              
                         </a>
                         </div>
+                     
                     </div>
                     <div class="swiper-slide">
                         <a href="moviepage.html">
